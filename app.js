@@ -90,6 +90,10 @@ app.delete(
   })
 );
 
+app.all('*', (req, res, next) => {
+  res.send('<h1>404</h1>');
+});
+
 app.use((err, req, res, next) => {
   res.send(':(');
 });
