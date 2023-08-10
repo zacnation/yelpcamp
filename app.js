@@ -82,7 +82,7 @@ app.get(
   '/campgrounds/:id',
   catchAsync(async (req, res) => {
     const { id } = req.params;
-    const campground = await Campground.findById(id);
+    const campground = await Campground.findById(id).populate('reviews');
     res.render('campgrounds/show', { campground });
   })
 );
@@ -138,7 +138,6 @@ app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;
   if (!err.message) err.message = 'Something went wrong';
   res.status(statusCode).render('error', { err });
-  res.send(':(');
 });
 
 app.listen(3000, () => {
