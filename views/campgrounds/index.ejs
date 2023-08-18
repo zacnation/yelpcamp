@@ -12,9 +12,15 @@
   <div class="row">
     <div class="col-md-4">
       <% if (campground.images.length) { %>
-      <img class="img-fluid" src="<%= campground.images[0].url %>" alt="" />
+      <img
+        crossorigin="anonymous"
+        class="img-fluid"
+        src="<%= campground.images[0].url %>"
+        alt=""
+      />
       <% } else { %>
       <img
+        crossorigin="anonymous"
         class="img-fluid"
         src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4683305.jpg&f=1&nofb=1&ipt=fe16d1401472a3111c4872905617ff65d4a39b4d950272594f9c7d518609d79a&ipo=images"
         alt=""
