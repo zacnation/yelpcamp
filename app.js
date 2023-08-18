@@ -17,6 +17,8 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
+const dbUrl = process.env.DB_URL;
+// mongodb://127.0.0.1:27017/yelp-camp
 
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
@@ -100,7 +102,7 @@ app.use(
         "'self'",
         'blob:',
         'data:',
-        'https://res.cloudinary.com/douqbebwk/',
+        'https://res.cloudinary.com/dbwkw7rme/',
         'https://images.unsplash.com/',
       ],
       fontSrc: ["'self'", ...fontSrcUrls],
