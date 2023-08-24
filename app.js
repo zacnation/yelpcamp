@@ -17,7 +17,7 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
-const dbUrl = 'mongodb://127.0.0.1:27017/yelp-camp';
+const dbUrl = process.env.DB_URL;
 // mongodb://127.0.0.1:27017/yelp-camp
 
 const userRoutes = require('./routes/users');
@@ -26,7 +26,7 @@ const reviewRoutes = require('./routes/reviews');
 
 const MongoStore = require('connect-mongo');
 
-mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp', {
+mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   // useCreateIndex: true,
   useUnifiedTopology: true,
