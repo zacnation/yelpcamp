@@ -20,10 +20,10 @@
       </div>
       <div class="navbar-nav ms-auto">
         <% if(typeof currentUser !== 'undefined' && currentUser !== null) { %>
+        <a href="/logout" class="nav-link">Log out</a>
+        <% } else { %>
         <a href="/login" class="nav-link">Log in</a>
         <a href="/register" class="nav-link">Register</a>
-        <% } else { %>
-        <a href="/logout" class="nav-link">Log out</a>
         <% } %>
       </div>
     </div>
